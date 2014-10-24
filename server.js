@@ -49,7 +49,7 @@ app.post('/v1/pushPackages/:websitePushID', function (req, res) {
         'Content-type': 'application/zip'
     });
     console.log(file);
-    res.send( file )g;
+    res.send( file );
 });
 
 /**
