@@ -45,6 +45,7 @@ Safari will connect to this endpoint to look for your push package
 app.post('/v1/pushPackages/:websitePushID', function (req, res) {
     console.log('website push id', req.params.websitePushID);
     res.set({'Content-type': 'application/zip'});
+    console.log(process.env.OPENSHIFT_DATA_DIR);
     res.sendFile(process.env.OPENSHIFT_DATA_DIR || '/tmp/' + 'pushPackage1414174851.zip');
 });
 
@@ -73,7 +74,7 @@ Safari will connect to this endpoint when errors occur.
 app.post('/v1/log', function (req, res) {
     // Do Logging Stuff
     console.log(req.body.logs);
-    res.send(200).end();
+    res.send(200);
 });
 
 app.listen(port, ipaddress, function () {
