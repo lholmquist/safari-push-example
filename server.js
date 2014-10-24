@@ -44,9 +44,12 @@ Safari will connect to this endpoint to look for your push package
 */
 app.post('/v1/pushPackages/:websitePushID', function (req, res) {
     console.log('website push id', req.params.websitePushID);
-    res.set({'Content-type': 'application/zip'});
-    console.log(process.env.OPENSHIFT_DATA_DIR);
-    res.sendFile(process.env.OPENSHIFT_DATA_DIR || '/tmp/' + 'pushPackage1414174851.zip');
+    var file = fs.readFileSync(process.env.OPENSHIFT_DATA_DIR + 'pushPackage1414174851.zip');
+    res.set({
+        'Content-type': 'application/zip'
+    });
+    console.log(file);
+    res.send( file );
 });
 
 /**
@@ -74,7 +77,7 @@ Safari will connect to this endpoint when errors occur.
 app.post('/v1/log', function (req, res) {
     // Do Logging Stuff
     console.log(req.body.logs);
-    res.send(200);
+    res.status(200).end();
 });
 
 app.listen(port, ipaddress, function () {
