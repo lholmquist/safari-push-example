@@ -43,13 +43,9 @@ app.use(express.static(__dirname + '/public'));
 Safari will connect to this endpoint to look for your push package
 */
 app.post('/v1/pushPackages/:websitePushID', function (req, res) {
-    var file;
-    // Load your push package .zip file or dynamically create one
-    // Example:
-    file = fs.readFileSync( process.env.OPENSHIFT_DATA_DIR + '/pushPackage1414174851.zip');
-
+    console.log('website push id', req.params.websitePushID);
     res.set({'Content-type': 'application/zip'});
-    res.sendfile(file);
+    res.sendFile(process.env.OPENSHIFT_DATA_DIR || '/tmp/' + 'pushPackage1414174851.zip');
 });
 
 /**
@@ -77,7 +73,7 @@ Safari will connect to this endpoint when errors occur.
 app.post('/v1/log', function (req, res) {
     // Do Logging Stuff
     console.log(req.body.logs);
-    res.send(200);
+    res.send(200).end();
 });
 
 app.listen(port, ipaddress, function () {
