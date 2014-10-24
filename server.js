@@ -76,7 +76,7 @@ Safari will connect to this endpoint when errors occur.
 */
 app.post('/v1/log', function (req, res) {
     // Do Logging Stuff
-    console.log(res.body.logs);
+    console.log(req.body.logs);
     res.send(200);
 });
 
