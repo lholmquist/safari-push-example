@@ -44,12 +44,12 @@ Safari will connect to this endpoint to look for your push package
 */
 app.post('/v1/pushPackages/:websitePushID', function (req, res) {
     console.log('website push id', req.params.websitePushID);
-    var file = fs.readFileSync(process.env.OPENSHIFT_DATA_DIR + 'pushPackage1414174851.zip');
+    var file = fs.readFileSync(process.env.OPENSHIFT_DATA_DIR + 'pushPackage.zip');
     res.set({
         'Content-type': 'application/zip'
     });
     console.log(file);
-    res.send( file );
+    res.send( file )g;
 });
 
 /**
