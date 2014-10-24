@@ -46,10 +46,10 @@ app.post('/v1/pushPackages/:websitePushID', function (req, res) {
     var file;
     // Load your push package .zip file or dynamically create one
     // Example:
-    // file = fs.readFileSync('pushpackage.zip');
+    file = fs.readFileSync( process.env.OPENSHIFT_DATA_DIR + '/pushPackage1414174851.zip');
 
     res.set({'Content-type': 'application/zip'});
-    res.send(file);
+    res.sendfile(file);
 });
 
 /**
