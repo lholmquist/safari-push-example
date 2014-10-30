@@ -48,7 +48,6 @@ app.post('/v1/pushPackages/:websitePushID', function (req, res) {
     res.set({
         'Content-type': 'application/zip'
     });
-    console.log(file);
     res.send( file );
 });
 

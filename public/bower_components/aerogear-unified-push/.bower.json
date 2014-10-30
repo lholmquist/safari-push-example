@@ -1,0 +1,46 @@
+{
+  "name": "aerogear-unified-push",
+  "title": "AeroGear JavaScript Library - UnifiedPush Component",
+  "description": "Provides a lightweight set of utilities for communication, security, storage and more.",
+  "homepage": "https://github.com/aerogear/aerogear-js",
+  "author": {
+    "name": "Red Hat, Inc.",
+    "url": "http://aerogear.org"
+  },
+  "maintainers": {
+    "name": "Lucas Holmquist",
+    "email": "lholmqui@redhat.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aerogear/aerogear-js.git"
+  },
+  "bugs": {
+    "url": "https://issues.jboss.org/browse/AEROGEAR"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "version": "2.0.0",
+  "main": "./aerogear.unified-push.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.0",
+    "commit": "8002287ad9ab0a08a7c16a84f50024f4e5493593"
+  },
+  "_source": "git://github.com/AeroGear-Components/unified-push.git",
+  "_target": "~2.0.0",
+  "_originalSource": "aerogear-unified-push",
+  "_direct": true
+}
